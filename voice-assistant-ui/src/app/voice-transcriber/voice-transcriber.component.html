@@ -1,0 +1,15 @@
+<div style="text-align: center; margin-top: 40px;">
+  <h1>🎙️ Voice Assistant</h1>
+
+  <button (click)="startRecording()" [disabled]="isRecording">Start Recording</button>
+  <button (click)="stopRecording()" [disabled]="!isRecording">Stop Recording</button>
+
+  <div *ngIf="isRecording" style="margin-top: 20px;">
+    <p>🔴 Listening...</p>
+  </div>
+
+  <div *ngIf="transcribedText" style="margin-top: 20px;">
+    <p>📝 Transcription:</p>
+    <strong style="font-size: 20px;">{{ transcribedText }}</strong>
+  </div>
+</div>
